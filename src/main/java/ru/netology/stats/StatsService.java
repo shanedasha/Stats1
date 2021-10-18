@@ -40,8 +40,9 @@ public class StatsService {
     public int monthLowAvg(int[] sales) {
         int month = 0;
         int monthLowAvg = 0;
+        int avg = findAvg(sales);
         for (int sale : sales) {
-            if (sale < findAvg(sales)) {
+            if (sale < avg) {
                 monthLowAvg = monthLowAvg + 1;
             }
         }
@@ -51,8 +52,9 @@ public class StatsService {
     public int monthHighAvg(int[] sales) {
         int month = 0;
         int monthHighAvg = 0;
+        int avg = findAvg(sales);
         for (int sale : sales) {
-            if (sale > findAvg(sales)) {
+            if (sale > avg) {
                 monthHighAvg = monthHighAvg + 1;
             }
         }
